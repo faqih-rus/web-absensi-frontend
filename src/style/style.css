@@ -1,0 +1,57 @@
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+Form {
+  border-radius: 30px;
+}
+
+.login-background {
+  background: rgb(91, 217, 255);
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.typing-effect-container {
+  margin-bottom: 20px;
+}
+
+.typing-effect {
+  font-size: 3em;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.login-form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.login-button {
+  display:grid;
+
+  grid: 0%
+  
+  
+  
+  ;
+}
