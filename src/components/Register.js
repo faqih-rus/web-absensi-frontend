@@ -25,7 +25,7 @@ const Register = ({ title, description }) => {
     setROLE(inputROLE);
   };
 
-  const userRegister = () => {
+  const userRegister = async () => {
     console.log("user Register ready");
 
     const requestingData = {
@@ -35,11 +35,8 @@ const Register = ({ title, description }) => {
       role: ROLE,
     };
 
-    axios({
-      method: "POST",
-      url: "http://localhost:3001/users",
-      data: requestingData,
-    }).then((result) => {
+    try {
+      const result = await axios.post("http://localhost:3001/users", requestingData);
       console.log(result.data);
       if (result.data.registered) {
         alert("pendaftaran berhasil");
@@ -47,7 +44,10 @@ const Register = ({ title, description }) => {
       } else {
         alert("gagal mendaftar");
       }
-    });
+    } catch (error) {
+      console.error("Error during registration:", error.response ? error.response.data : error.message);
+      alert("Registration failed. Please try again.");
+    }
   };
 
   return (
@@ -102,7 +102,7 @@ const Register = ({ title, description }) => {
               onChange={(event) => handlePASS(event.target.value)}
             />
           </Form.Group>
-          <Button className="mt-4 w-100" onClick={() => userRegister()}>
+          <Button className="mt-4 w-100" onClick={userRegister}>
             Daftar Sekarang
           </Button>
         </Form>

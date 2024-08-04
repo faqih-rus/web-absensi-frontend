@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home title="HOMEPAGE" />} />
+        <Route path="/" element={<Home title="HOMEPAGE" description="SELAMAT DATANG WINNICODERS!" />} />
         <Route
           path="/dashboard"
           element={<Dashboard title="DASHBOARD PAGE" />}
