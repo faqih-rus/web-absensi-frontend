@@ -48,10 +48,5 @@ Form {
 
 .login-button {
   display:grid;
-
-  grid: 0%
-  
-  
-  
-  ;
+  grid: 0%;
 }

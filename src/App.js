@@ -1,17 +1,27 @@
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from "./components/Login";
 import Home from "../src/components/Home";
 import NotFound from "./pages/NotFound";
 import Dashboard from "./pages/Dashboards/Dashboard";
 import Register from "./components/Register";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 function App() {
+  const isAuthenticated = !!localStorage.getItem('token');
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Home title="HOMEPAGE" description="SELAMAT DATANG WINNICODERS!" />} />
         <Route
           path="/dashboard"
-          element={<Dashboard title="DASHBOARD PAGE" />}
+          element={
+            isAuthenticated ? (
+              <Dashboard title="DASHBOARD PAGE" />
+            ) : (
+              <Navigate to="/login" replace />
+            )
+          }
         />
         <Route
           path="/login"

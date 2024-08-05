@@ -1,0 +1,45 @@
+.dashboard-container {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.user-info-card,
+.attendance-card,
+.chart-card,
+.absensi-list-card {
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.user-info-card:hover,
+.attendance-card:hover,
+.chart-card:hover,
+.absensi-list-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.card-title {
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.table {
+    font-size: 0.9rem;
+}
+
+.badge {
+    font-size: 0.8rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}

@@ -1,5 +1,7 @@
 export const Logout = () => {
-    localStorage.clear();
-    window.location.reload();
-  };
-  
+  localStorage.removeItem("token");
+  localStorage.removeItem("nip");
+  localStorage.removeItem("nama");
+  localStorage.removeItem("role");
+  window.location.replace("/login");
+};

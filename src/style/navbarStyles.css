@@ -1,0 +1,26 @@
+.navbar-custom {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .navbar-custom .nav-link {
+    color: #333 !important;
+  }
+  
+  .navbar-custom .nav-link:hover {
+    color: #0056b3 !important;
+  }
+  
+  .navbar-custom .btn-outline-secondary {
+    color: #333;
+    border-color: #333;
+  }
+  
+  .navbar-custom .btn-outline-secondary:hover {
+    color: #fff;
+    background-color: #333;
+    border-color: #333;
+  }
+  
