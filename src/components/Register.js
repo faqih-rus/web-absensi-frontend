@@ -72,7 +72,7 @@ const Register = ({ title, description }) => {
     backgroundImage: `
       linear-gradient(
         135deg,
-        rgba(255, 107, 0, 0.7),
+        rgba(254, 102, 196, 0.7),
         rgba(0, 128, 128, 0.7)
       ),
       url("https://www.winnicode.com/mazer/images/logo.png")

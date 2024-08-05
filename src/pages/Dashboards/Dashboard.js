@@ -68,10 +68,14 @@ const Dashboard = ({ title }) => {
         { headers: { Authorization: `Bearer ${token}` } }
       );
       setAbsenNotif(!absenNotif);
-      showAlert('Success', `Check ${params} berhasil!`, 'success');
+      showAlert('Sukses', `Check ${params} berhasil!`, 'success');
     } catch (error) {
       console.error('Error during attendance:', error);
-      showAlert('Error', `Check ${params} gagal!`, 'error');
+      if (error.response && error.response.status === 400) {
+        showAlert('Error', error.response.data.error, 'error');
+      } else {
+        showAlert('Error', `Check ${params} gagal!`, 'error');
+      }
       if (error.response && error.response.status === 401) {
         localStorage.clear();
         navigate('/login');
@@ -99,7 +103,7 @@ const Dashboard = ({ title }) => {
         <Col md={4}>
           <Card className="user-info-card">
             <Card.Body>
-              <Card.Title>User Information</Card.Title>
+              <Card.Title>Informasi Karyawan</Card.Title>
               <Card.Text>
                 <strong>Name:</strong> {localStorage.getItem('nama')}
                 <br />
@@ -113,7 +117,7 @@ const Dashboard = ({ title }) => {
         <Col md={4}>
           <Card className="attendance-card">
             <Card.Body>
-              <Card.Title>Attendance</Card.Title>
+              <Card.Title>Kehadiran</Card.Title>
               <Button onClick={() => Attendance('checkin')} className="me-2 mb-2">
                 Check In
               </Button>

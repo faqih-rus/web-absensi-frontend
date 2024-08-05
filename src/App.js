@@ -17,7 +17,7 @@ function App() {
           path="/dashboard"
           element={
             isAuthenticated ? (
-              <Dashboard title="DASHBOARD PAGE" />
+              <Dashboard title="DASHBOARD" />
             ) : (
               <Navigate to="/login" replace />
             )
@@ -25,12 +25,12 @@ function App() {
         />
         <Route
           path="/login"
-          element={<Login title="LOGIN PAGE" description="ABSEN KARYAWAN" />}
+          element={<Login title="MASUK" description="ABSEN KARYAWAN" />}
         />
         <Route
           path="/register"
           element={
-            <Register title="REGISTER PAGE" description="ABSEN KARYAWAN" />
+            <Register title="DAFTAR" description="ABSEN KARYAWAN" />
           }
         />
         <Route path="*" element={<NotFound />} />
